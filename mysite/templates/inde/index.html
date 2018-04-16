@@ -1,0 +1,269 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/segon.css' %}">
+    <link rel="stylesheet" href="{% static 'img/codi.jpg' %}">
+    <link rel="stylesheet" href="{% static 'img/zidane.jpg' %}">
+  </head>
+  <body>
+        <section id="introduction">
+            <div class="container">
+                <div class="row fill-viewport align-items-center">
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-white">{{pagina1.title}}</h1>
+                        <p class="lead text-white-70">{{pagina1.desc}}</p>
+                        <a class="btn btn-primary" href="#" role="button">{{pagina1.boton}}</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="info--1">
+          <div class="container">
+            <div class="row pt-5 align-items-center">
+               <div class="col d-none d-md-block align-self-end">
+                 <img src="http://res.cloudinary.com/blushcow/image/upload/v1506573211/iPhone-6S-Plus_repyvm.png" class="img-fluid"/>
+               </div>
+               <div class="col">
+                   <h6 class="text-uppercase text-black-40">
+                    {{pagina2.subtitle}}
+                   </h6>
+                   <h2>{{pagina2.title}}</h2>
+                <p>{{pagina2.desc}}
+            </p>
+            <div class="row">
+                <div class="d-none d-md-block col">
+                        <a href="#" class="d-block">{{pagina2.link}}</a>
+                    </div>
+               </div>
+             </div>
+         </div>
+            </div>
+        <section id="info-2" class="bg-dark">
+           <div class="container">
+             <div class="row align-items-center fill-80-viewport">
+               <div class="col-12 col-md-6 my-5 order-2 order-md-1">
+                 <p class="text-uppercase text-white-40"><strong>{{pagina3.title}}</strong></p>
+                 <h2 class="text-white">{{pagina3.subtitle}}</h2>
+                 <p class="lead text-white-70">{{pagina3.desc}}</p>
+                 <a class="btn btn-light d-block d-md-inline-block py-3" href="#" role="button">{{pagina3.boton}}</a>
+               </div>
+               <pre class="col-12 col-md-6 my-5 order-1 order-md-2 py-4 border border-info rounded text-info">
+                <span>1</span> <span> //codingSteroids.js</span>
+                <span>2</span>
+                <span>3</span>   const data = {
+                <span>4</span>        "purpose": {
+                <span>5</span>        "getId": "#element",
+                <span>6</span>        "companyName": "coolStartup",
+                <span>7</span>      }
+                <span>8</span>    }
+                <span>9</span>
+                <span>10</span>   function codingSteroids(
+                <span>11</span>       data,
+                <span>12</span>       getSteroidsType
+                <span>13</span>   )
+                <span>14</span>
+                <span>15</span>   function getSteroidsType() {
+                <span>16</span>     return "codeHellish!"
+                <span>17</span>   }
+                </pre>
+             </div>
+           </div>
+          </section>
+        <section id="info-3">
+          <div class="container">
+            <div class="row fill-80-viewport align-items-center justify-content-end text-white">
+              <div class="col-12 basis-md-50">
+                <h6 class="text-white-40">
+                  {{pagina4.title}}
+                </h6>
+                <h3>{{pagina4.subtitle}}</h3>
+                <p class="text-uppercase text-white-70">{{pagina4.company}}</p>
+              </div>
+          </div>
+          </div>
+        </section>
+        <section id="featured-on" class="bg-primary">
+          <div class="container">
+            <div class="row py-5 text-center text-white">
+              <div class="col-12">
+                  <i class="fa fa-3x fa-free-code-camp my-3 mx-5"
+                     aria-hidden="true"></i>
+                  <i class="fa fa-3x fa-twitter my-3 mx-4"
+                     aria-hidden="true"></i>
+                  <i class="fa fa-3x fa-facebook my-3 mx-4"
+                     aria-hidden="true"></i>
+                  <i class="fa fa-3x fa-quora my-3 mx-4"
+                     aria-hidden="true"></i>
+                  <i class="fa fa-3x fa-reddit my-3 mx-4"
+                     aria-hidden="true"></i>
+                  <i class="fa fa-3x fa-pied-piper my-3 mx-4"
+                     aria-hidden="true"></i>
+                  <i class="fa fa-3x fa-paypal my-3 mx-4"
+                     aria-hidden="true"></i>
+                  <i class="fa fa-3x fa-product-hunt my-3 mx-4"
+                     aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="feature-rundown">
+          <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 col-md-6 mx-auto mt-5 text-center">
+                        <h6 class="text-black-40 text-uppercase">
+                          {{pagina5.title}}
+                        </h6>
+                        <h3 class="text-black-70">{{pagina5.subtitle}}</h3>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-12 col-md-4 text-center">
+                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
+                          <p>
+                            <strong class="text-info">{{pagina5.link}}</strong>   {{pagina5.desc}}{
+                          </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
+                          <p>
+                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
+                          </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
+                          <p>
+                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
+                          </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
+                          <p>
+                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
+                          </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
+                          <p>
+                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
+                          </p>
+                        </div>
+                        <div class="col-12 col-md-4 text-center mb-5">
+                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
+                          <p>
+                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
+                          </p>
+                        </div>
+            </div>
+          </div>
+        </section>
+        <section id="pricing" class="bg-light">
+            <div class="container fill-80-viewport">
+                <div class="row">
+                  <div class="col-12 col-md-6 mx-auto text-center my-5">
+                      <h6 class="text-black-40 text-uppercase">
+                        {{pagina6.title}}
+                      </h6>
+                      <h3 class="text-black-70">{{pagina6.subtitle}}</h3>
+                    </div>
+                </div>
+            <div class="row pb-5">
+                <div class="col-12 col-md-4 px-2 my-4 text-center">
+                <h6 class="text-black-40 text-uppercase">
+                    Personal
+                  </h6>
+                <img src="http://bit.ly/2y9EpP2" alt="$9 per month" class="my-4"/>
+                <p>{{pagina6.desc}}</p>
+                <ul class="list-unstyled list-border-black-20 list-border-y text-left text-black-70">
+                  <li class="py-2"><strong>10k</strong> monthly requests</li>
+                  <li class="py-2"><strong>9am-5pm</strong>
+                    technical support</li>
+                  <li class="py-2"><strong>Public</strong>
+                    API access</li>
+                </ul>
+                <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">{{pagina6.boton}}</a>
+                </div>
+
+                <div class="col-12 col-md-4 px-2 my-4 text-center">
+                  <h6 class="text-black-40 text-uppercase">
+                      Business
+                    </h6>
+                  <img src="http://bit.ly/2xKjVeS" alt="$49 per month" class="my-4">
+                  <p>{{pagina6.desc}}</p>
+                  <ul class="list-unstyled  list-border-black-20 list-border-y text-left text-black-70">
+                    <li class="py-2"><strong>100k</strong> monthly requests</li>
+                    <li class="py-2"><strong>9am-5pm</strong>
+                      technical support</li>
+                    <li class="py-2"><strong>Public and Private</strong>
+                      API access</li>
+                  </ul>
+                  <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">{{pagina6.boton}}</a>
+                </div>
+
+                <div class="col-12 col-md-4 px-2 my-4 text-center">
+                  <h6 class="text-black-40 text-uppercase">
+                      Corporate
+                    </h6>
+                  <img src="http://bit.ly/2wjsVEl" alt="$119 per month" class="my-4"/>
+                  <p>{{pagina6.desc}}</p>
+                  <ul class="list-unstyled list-border-black-20 list-border-y text-left text-black-70">
+                    <li class="py-2"><strong>10,000k</strong> monthly requests</li>
+                    <li class="py-2"><strong>9am-5pm</strong>
+                      technical support</li>
+                    <li class="py-2"><strong>Public and Private</strong>
+                      API access</li>
+                  </ul>
+                  <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">{{pagina6.boton}}</a>
+                </div>
+              </div>
+              </div>
+        </section>
+        <section id="footer" class="bg-dark">
+          <div class="container">
+            <div class="row fill-40-viewport py-5 text-white-70 align-items-center">
+                <div class="col-12 col-md-6">
+                  <ul class="list-unstyled">
+                    <li><h6 class="text-white">ABOUT</h6></li>
+                    <li>We’ve been working on Coding on Steroids
+                      for the all our lives.
+                      A groundbreaking tech deserves such dedication, huh?
+                      If you’d like to learn more, or are interested in a job,
+                      contact us anytime at
+                      <a class="text-white" href="https://twitter.com/OhansEmmanuel" target="_blank">@ohansemmanuel</a></li>
+                  </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                  <ul class="list-unstyled">
+                    <li><h6 class="text-white">PRODUCT</h6></li>
+                    <li>Features</li>
+                    <li>Examples</li>
+                    <li>Tour</li>
+                    <li>Gallery</li>
+                  </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                  <ul class="list-unstyled">
+                    <li><h6 class="text-white">APIS</h6></li>
+                    <li>Rich data</li>
+                    <li>Simple</li>
+                    <li>Real time</li>
+                    <li>Social</li>
+                  </ul>
+                </div>
+                <div class="col-12 col-md-2">
+                <ul class="list-unstyled">
+                  <li><h6 class="text-white">LEGAL</h6></li>
+                  <li>Terms</li>
+                  <li>Legal</li>
+                  <li>Privacy</li>
+                  <li>License</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+  </body>
+</html>

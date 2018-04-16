@@ -1,0 +1,47 @@
+#introduction {
+  background: linear-gradient(rgba(100,181,246 ,1), rgba(0,0,0,0.8)), url('http://bit.ly/2fBj6OJ') 0% 0%/cover
+}
+
+.fill-viewport {
+  min-height: 100vh
+}
+
+.text-white-40 {
+  color: rgba(255,255,255,0.4)
+}
+.text-white-70 {
+  color: rgba(255,255,255,0.7)
+}
+
+.text-black-70 {
+   color: rgba(0,0,0,0.7)
+}
+.text-black-40 {
+   color: rgba(0,0,0,0.4)
+}
+
+.fill-80-viewport {
+  min-height: 80vh
+}
+
+@media screen and (min-width: 768px ){
+  .basis-md-50 {
+    flex-basis: 50%
+  }
+}
+
+.list-border-y li {
+  border-top: 1px solid
+}
+.list-border-y li:last-child {
+  border-bottom: 1px solid
+}
+
+.list-border-black-20 li,
+.list-border-black-20 li:last-child{
+  border-color: rgba(0,0,0,0.2)
+}
+
+#info-3 {
+  background: linear-gradient(rgba(237,236,221,1), rgba(0,0,0,0.2)), url('http://urbanian.mundodeportivo.com/p/7492/88701_convierten_en_meme_a_esta_foto_de_zidane_y_twitter_se_llena_de_bromas_epicas_thumb_fb.jpg?cb=1626966') 0% 0%/cover
+}
