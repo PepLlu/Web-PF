@@ -12,11 +12,13 @@ class Hero(models.Model):
     color_bot = models.CharField(max_length=20)
     img = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
 
-class Cabezera(models.Model):
+class ModuloImagen(models.Model):
+    verbose_name = 'Imagen'
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=50)
     desc = models.TextField(max_length=500)
-    link = models.CharField(max_length=20)
+    img = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+    link = models.URLField(max_length=200)
 
 class Pagina3(models.Model):
     title = models.CharField(max_length=100)

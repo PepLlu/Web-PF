@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.contrib import admin
-from .models import Hero, Cabezera, Pagina3, Pagina4, Pagina5, Pagina6
+from .models import Hero, ModuloImagen, Pagina3, Pagina4, Pagina5, Pagina6
 
 
 class HeroAdmin(admin.ModelAdmin):
@@ -14,12 +14,13 @@ class HeroAdmin(admin.ModelAdmin):
 ]
 
 
-class QuestionAdmin2(admin.ModelAdmin):
+class ModuloImagenAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titulo',          {'fields': ['title']}),
-        ('Subtitulo',       {'fields': ['subtitle']}),
-        ('Descripcion',     {'fields': ['desc']}),
-        ('Link/Enlace',     {'fields': ['link']}),
+        ('Titulo',                  {'fields': ['title']}),
+        ('Subtitulo',               {'fields': ['subtitle']}),
+        ('Descripcion',             {'fields': ['desc']}),
+        ('URL',                     {'fields': ['link']}),
+        ('Imagen',                  {'fields': ['img']}),
 ]
 
 
@@ -60,7 +61,7 @@ class QuestionAdmin6(admin.ModelAdmin):
 ]
 
 admin.site.register(Hero, HeroAdmin)
-admin.site.register(Cabezera, QuestionAdmin2)
+admin.site.register(ModuloImagen, ModuloImagenAdmin)
 admin.site.register(Pagina3, QuestionAdmin3)
 admin.site.register(Pagina4, QuestionAdmin4)
 admin.site.register(Pagina5, QuestionAdmin5)
