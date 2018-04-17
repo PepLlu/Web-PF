@@ -14,9 +14,27 @@
             <div class="container">
                 <div class="row fill-viewport align-items-center">
                     <div class="col-12 col-md-6">
-                        <h1 class="text-white">{{pagina1.title}}</h1>
-                        <p class="lead text-white-70">{{pagina1.desc}}</p>
-                        <a class="btn btn-primary" href="#" role="button">{{pagina1.boton}}</a>
+                        <h1 class="text-white">{{hero.title}}</h1>
+                        <p class="lead text-white-70">{{hero.desc}}</p>
+    <style>
+        a.buttono {
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: {{hero.color_bot}};
+            border-radius: 6px;
+            border: 2px solid #black;
+        }
+
+        a.buttono:hover{
+            color: #1883ba;
+            background-color: #ffffff;
+        }
+    </style>
+                        <a class="buttono" href={{hero.URL}} role="button">{{hero.boton}}</a>
+
                     </div>
                 </div>
             </div>
@@ -29,14 +47,14 @@
                </div>
                <div class="col">
                    <h6 class="text-uppercase text-black-40">
-                    {{pagina2.subtitle}}
+                    {{cabezera.subtitle}}
                    </h6>
-                   <h2>{{pagina2.title}}</h2>
-                <p>{{pagina2.desc}}
+                   <h2>{{cabezera.title}}</h2>
+                <p>{{cabezera.desc}}
             </p>
             <div class="row">
                 <div class="d-none d-md-block col">
-                        <a href="#" class="d-block">{{pagina2.link}}</a>
+                        <a href="#" class="d-block">{{cabezera.link}}</a>
                     </div>
                </div>
              </div>
