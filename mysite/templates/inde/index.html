@@ -165,47 +165,21 @@
                           {{moduloproductos.titulo}}
                         </h6>
                         <h3 class="text-black-70">{{moduloproductos.subtitulo}}</h3>
-                </div>
+                      </div>
             </div>
-            <div class="row mb-5">
-                <div class="col-12 col-md-4 text-center">
-                          <img src="{{moduloitem.imagen}}" width="50px" class="mt-4"/>
-                          <p>
-                            <strong class="text-info">{{moduloitem.nombre_del_url}}</strong>   {{moduloitem.descripcion}}
-                          </p>
-                        </div>
-                        <div class="col-12 col-md-4 text-center">
-                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
-                          <p>
-                            <strong class="text-info">{{moduloitem.nombre_del_url}}</strong>  {{moduloitem.descripcion}}
-                          </p>
-                        </div>
-                        <div class="col-12 col-md-4 text-center">
-                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
-                          <p>
-                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
-                          </p>
-                        </div>
-                        <div class="col-12 col-md-4 text-center">
-                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
-                          <p>
-                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
-                          </p>
-                        </div>
-                        <div class="col-12 col-md-4 text-center">
-                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
-                          <p>
-                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
-                          </p>
-                        </div>
-                        <div class="col-12 col-md-4 text-center mb-5">
-                          <img src="https://i1.wp.com/esascosas.com/wp-content/uploads/2015/02/espira.jpg" width="50px" class="mt-4"/>
-                          <p>
-                            <strong class="text-info">{{pagina5.link}}</strong>  {{pagina5.desc}}
-                          </p>
-                        </div>
+        {% for moduloitem in moduloitems %}  
+            <div class="container">  
+              <div class="row mb-5">
+                  <div class="col-12 col-md-4 mx-auto mt-5 text-center">
+                    <img src="{{ MEDIA_URL }}{{moduloitem.imagen}}" width="75px" class="mt-4"/>
+                    <p>
+                    <strong class="text-info">{{moduloitem.nombre_del_URL}}</strong>   {{moduloitem.descripcion}}
+                    </p>
+                  </div>
+              </div>
             </div>
           </div>
+        {% endfor %}
         </section>
         <section id="pricing" class="bg-light">
             <div class="container fill-80-viewport">

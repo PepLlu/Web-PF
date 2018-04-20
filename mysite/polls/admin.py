@@ -47,7 +47,7 @@ class ModuloNoticiaAdmin(admin.ModelAdmin):
         ('',             {'fields': ['imagen']}),
 ]
 
-class ModuloItemTabularInLine(admin.TabularInline):
+class ModuloItemStackedInline(admin.StackedInline):
     model = ModuloItem
     fieldsets = [
         ('',     {'fields': ['imagen']}),
@@ -58,7 +58,7 @@ class ModuloItemTabularInLine(admin.TabularInline):
 
 
 class ModuloProductosAdmin(admin.ModelAdmin):
-    inlines = [ModuloItemTabularInLine]
+    inlines = [ModuloItemStackedInline]
     class Meta:
         model = ModuloProductos
     fieldsets = [

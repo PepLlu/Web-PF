@@ -9,7 +9,7 @@ def index(request):
     modulocodigo = ModuloCodigo.objects.first()
     modulonoticia = ModuloNoticia.objects.first()
     moduloproductos = ModuloProductos.objects.first()
-    moduloitem = ModuloItem.objects.first()
+    moduloitems = ModuloItem.objects.all()
     pagina = Pagina.objects.first()
 
     return render(request, 'inde/index.html', {
@@ -19,7 +19,7 @@ def index(request):
         'modulonoticia': modulonoticia,
         'moduloproductos': moduloproductos,
         'pagina': pagina,
-        'moduloitem': moduloitem,
+        'moduloitems': moduloitems,
         })
 
 def pagina(request):
