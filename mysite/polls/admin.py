@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.contrib import admin
-from .models import Hero, ModuloImagen, ModuloCodigo, ModuloNoticia, ModuloProductos, Pagina, ModuloItem
+from .models import Hero, ModuloImagen, ModuloCodigo, ModuloNoticia, ModuloProductos, ModuloPrecios, ModuloItem, ModuloItem2
 
 
 
@@ -66,18 +66,35 @@ class ModuloProductosAdmin(admin.ModelAdmin):
         ('',       {'fields': ['subtitulo']}),    
 ]
 
-class QuestionAdmin(admin.ModelAdmin):
+class ModuloItem2StackedInline(admin.StackedInline):
+    model = ModuloItem2
     fieldsets = [
-        ('Titulo',          {'fields': ['titulo']}),
-        ('Subtitulo',       {'fields': ['subtitulo']}),
-        ('Descripcion',     {'fields': ['descripcion']}),
-        ('Boton',           {'fields': ['boton']}),
+        ('',            {'fields': ['titulo']}),
+        ('',            {'fields': ['imagen']}),
+        ('',            {'fields': ['descripcion']}),
+        ('',            {'fields': ['descripcion1']}),
+        ('',            {'fields': ['descripcion2']}),
+        ('',            {'fields': ['boton']}),
+        ('',            {'fields': ['color_del_boton']}),
+        ('',            {'fields': ['URL']}),
+
+
 ]
 
+
+class ModuloPreciosAdmin(admin.ModelAdmin):
+    inlines = [ModuloItem2StackedInline]
+    class Meta:
+        model = ModuloPrecios
+    fieldsets = [
+        ('',       {'fields': ['titulo']}),
+        ('',       {'fields': ['subtitulo']}),
+    ]
+    
 admin.site.register(Hero, HeroAdmin)
 admin.site.register(ModuloImagen, ModuloImagenAdmin)
 admin.site.register(ModuloCodigo, ModuloCodigoAdmin)
 admin.site.register(ModuloNoticia, ModuloNoticiaAdmin)
 admin.site.register(ModuloProductos, ModuloProductosAdmin)
-admin.site.register(Pagina, QuestionAdmin)
+admin.site.register(ModuloPrecios, ModuloPreciosAdmin)
 admin.site.register(ModuloItem)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
-from .models import Hero, ModuloImagen, ModuloCodigo, ModuloNoticia, ModuloProductos, Pagina, ModuloItem
+from .models import Hero, ModuloImagen, ModuloCodigo, ModuloNoticia, ModuloProductos, ModuloItem2, ModuloItem, ModuloPrecios
 
 def index(request):
     hero = Hero.objects.first()
@@ -10,7 +10,8 @@ def index(request):
     modulonoticia = ModuloNoticia.objects.first()
     moduloproductos = ModuloProductos.objects.first()
     moduloitems = ModuloItem.objects.all()
-    pagina = Pagina.objects.first()
+    moduloprecios = ModuloPrecios.objects.first()
+    moduloitems2 = ModuloItem2.objects.all()
 
     return render(request, 'inde/index.html', {
         'hero': hero,
@@ -18,8 +19,9 @@ def index(request):
         'modulocodigo': modulocodigo,
         'modulonoticia': modulonoticia,
         'moduloproductos': moduloproductos,
-        'pagina': pagina,
+        'moduloprecios': moduloprecios,
         'moduloitems': moduloitems,
+        'moduloitems2': moduloitems2,
         })
 
 def pagina(request):

@@ -28,21 +28,37 @@
         }
         
         a.buttonu {
-            text-decoration: none;
-            padding: 10px;
-            font-weight: 600;
-            font-size: 20px;
-            color: #ffffff;
-            background-color: {{modulocodigo.color_del_boton}};
-            border-radius: 6px;
-            border: 2px solid #black;
-        }
+          text-decoration: none;
+          padding: 10px;
+          font-weight: 600;
+          font-size: 20px;
+          color: #ffffff;
+          background-color: {{modulocodigo.color_del_boton}};
+          border-radius: 6px;
+          border: 2px solid #black;
+      }
 
-        a.buttonu:hover{
-            color: #1883ba;
-            background-color: #ffffff;
-        }
-        
+      a.buttonu:hover{
+          color: #1883ba;
+          background-color: #ffffff;
+      }
+      
+      a.buttonz {
+        text-decoration: none;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: {{moduloprecios.color_del_boton}};
+        border-radius: 6px;
+        border: 2px solid #black;
+    }
+
+    a.buttonz:hover{
+        color: #1883ba;
+        background-color: #ffffff;
+    }
+    
     
     #introduction {
         background: linear-gradient(rgba(220,0,0 ,1), rgba(0,0,0,0.2)), url('{{ MEDIA_URL }}{{hero.imagen}}') 0% 0%/cover
@@ -182,66 +198,33 @@
         {% endfor %}
         </section>
         <section id="pricing" class="bg-light">
-            <div class="container fill-80-viewport">
                 <div class="row">
                   <div class="col-12 col-md-6 mx-auto text-center my-5">
                       <h6 class="text-black-40 text-uppercase">
-                        {{pagina6.title}}
+                          {{moduloprecios.titulo}}
                       </h6>
-                      <h3 class="text-black-70">{{pagina6.subtitle}}</h3>
+                      <h3 class="text-black-70">{{moduloprecios.subtitulo}}</h3>
                     </div>
                 </div>
+          {% for moduloitem2 in moduloitems2 %}
+          <div class="container fill-80-viewport">
             <div class="row pb-5">
-                <div class="col-12 col-md-4 px-2 my-4 text-center">
+                <div class="col-12 col-md-4 px-2 my-4 mx-auto text-center">
                 <h6 class="text-black-40 text-uppercase">
-                    Personal
+                    {{moduloitem2.title}}
                   </h6>
-                <img src="http://bit.ly/2y9EpP2" alt="$9 per month" class="my-4"/>
-                <p>{{pagina6.desc}}</p>
+                <img src="{{ MEDIA_URL }}{{moduloitem2.imagen}}" width="50px" class="my-4"/>
+                <p>{{moduloitem2.descripcion}}</p>
                 <ul class="list-unstyled list-border-black-20 list-border-y text-left text-black-70">
-                  <li class="py-2"><strong>10k</strong> monthly requests</li>
-                  <li class="py-2"><strong>9am-5pm</strong>
-                    technical support</li>
-                  <li class="py-2"><strong>Public</strong>
-                    API access</li>
+                  <li class="py-2">{{moduloitem2.descripcion}}</li>
+                  <li class="py-2">{{moduloitem2.descripcion1}}</li>
+                  <li class="py-2">{{moduloitem2.descripcion2}}</li>
                 </ul>
-                <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">{{pagina6.boton}}</a>
+                <a class="btn btn-block btn-primary border-0 text-white py-3" href="{{moduloitem2.URL}}">{{moduloitem2.boton}}</a>
                 </div>
-
-                <div class="col-12 col-md-4 px-2 my-4 text-center">
-                  <h6 class="text-black-40 text-uppercase">
-                      Business
-                    </h6>
-                  <img src="http://bit.ly/2xKjVeS" alt="$49 per month" class="my-4">
-                  <p>{{pagina6.desc}}</p>
-                  <ul class="list-unstyled  list-border-black-20 list-border-y text-left text-black-70">
-                    <li class="py-2"><strong>100k</strong> monthly requests</li>
-                    <li class="py-2"><strong>9am-5pm</strong>
-                      technical support</li>
-                    <li class="py-2"><strong>Public and Private</strong>
-                      API access</li>
-                  </ul>
-                  <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">{{pagina6.boton}}</a>
-                </div>
-
-                <div class="col-12 col-md-4 px-2 my-4 text-center">
-                  <h6 class="text-black-40 text-uppercase">
-                      Corporate
-                    </h6>
-                  <img src="http://bit.ly/2wjsVEl" alt="$119 per month" class="my-4"/>
-                  <p>{{pagina6.desc}}</p>
-                  <ul class="list-unstyled list-border-black-20 list-border-y text-left text-black-70">
-                    <li class="py-2"><strong>10,000k</strong> monthly requests</li>
-                    <li class="py-2"><strong>9am-5pm</strong>
-                      technical support</li>
-                    <li class="py-2"><strong>Public and Private</strong>
-                      API access</li>
-                  </ul>
-                  <a class="btn btn-block btn-primary border-0 text-white py-3" href="#">{{pagina6.boton}}</a>
-                </div>
-              </div>
-              </div>
+            </div>
         </section>
+        {% endfor %}
         <section id="footer" class="bg-dark">
           <div class="container">
             <div class="row fill-40-viewport py-5 text-white-70 align-items-center">

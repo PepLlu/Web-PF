@@ -52,8 +52,19 @@ class ModuloItem(models.Model):
     descripcion = models.TextField(max_length=500)
     moduloproductos = models.ForeignKey(ModuloProductos)
 
-class Pagina(models.Model):
-    title = models.CharField(max_length=100)
-    subtitle = models.CharField(max_length=50)
-    desc = models.TextField(max_length=500)
+class ModuloPrecios(models.Model):
+    verbose_name = 'Preus'
+    titulo = models.CharField(max_length=100)
+    subtitulo = models.CharField(max_length=50)
+
+class ModuloItem2(models.Model):
+    verbose_name = 'Items2'
+    titulo = models.CharField(max_length=100)
+    imagen = models.ImageField(upload_to='img/%Y/%m/%d/', height_field=None, width_field=None, max_length=100)
+    descripcion = models.TextField(max_length=40)
+    descripcion1 = models.TextField(max_length=40)
+    descripcion2 = models.TextField(max_length=40)
     boton = models.CharField(max_length=20)
+    color_del_boton = models.CharField(max_length=20)
+    URL = models.URLField(max_length=200)
+    moduloprecios = models.ForeignKey(ModuloPrecios)
