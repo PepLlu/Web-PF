@@ -32,22 +32,25 @@ class ModuloCodigo(models.Model):
     URL = models.URLField(max_length=200)
 
 class ModuloNoticia(models.Model):
+    verbose_name = 'Noticia'
     titulo = models.CharField(max_length=150)
     subtitulo = models.CharField(max_length=50)
     company = models.CharField(max_length=40)
     imagen = models.ImageField(upload_to='img/%Y/%m/%d/', height_field=None, width_field=None, max_length=100)
 
 class ModuloProductos(models.Model):
+    verbose_name = 'Productos'
     titulo = models.CharField(max_length=100)
     subtitulo = models.CharField(max_length=50)
     
         
 class ModuloItem(models.Model):
+    verbose_name = 'Items'
     imagen = models.ImageField(upload_to='img/%Y/%m/%d/', height_field=None, width_field=None, max_length=100)
     nombre_del_URL = models.CharField(max_length=100)
     URL = models.URLField(max_length=200)
     descripcion = models.TextField(max_length=500)
-    moduloproductos = models.ForeignKey('ModuloProductos')
+    moduloproductos = models.ForeignKey(ModuloProductos)
 
 class Pagina(models.Model):
     title = models.CharField(max_length=100)

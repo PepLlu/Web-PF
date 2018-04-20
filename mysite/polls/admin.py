@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import Hero, ModuloImagen, ModuloCodigo, ModuloNoticia, ModuloProductos, Pagina, ModuloItem
 
 
+
 class HeroAdmin(admin.ModelAdmin):
     fieldsets = [
         ('',             {'fields': ['titulo']}),
@@ -46,20 +47,23 @@ class ModuloNoticiaAdmin(admin.ModelAdmin):
         ('',             {'fields': ['imagen']}),
 ]
 
-
-class ModuloProductosAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('',       {'fields': ['titulo']}),
-        ('',       {'fields': ['subtitulo']}),
-    ]
-
-class ModuloItemAdmin(admin.ModelAdmin):
+class ModuloItemTabularInLine(admin.TabularInline):
+    model = ModuloItem
     fieldsets = [
         ('',     {'fields': ['imagen']}),
         ('',     {'fields': ['nombre_del_URL']}),
         ('',     {'fields': ['URL']}),
         ('',     {'fields': ['descripcion']}),
+]
 
+
+class ModuloProductosAdmin(admin.ModelAdmin):
+    inlines = [ModuloItemTabularInLine]
+    class Meta:
+        model = ModuloProductos
+    fieldsets = [
+        ('',       {'fields': ['titulo']}),
+        ('',       {'fields': ['subtitulo']}),    
 ]
 
 class QuestionAdmin(admin.ModelAdmin):
@@ -76,4 +80,4 @@ admin.site.register(ModuloCodigo, ModuloCodigoAdmin)
 admin.site.register(ModuloNoticia, ModuloNoticiaAdmin)
 admin.site.register(ModuloProductos, ModuloProductosAdmin)
 admin.site.register(Pagina, QuestionAdmin)
-admin.site.register(ModuloItem, ModuloItemAdmin)
+admin.site.register(ModuloItem)
