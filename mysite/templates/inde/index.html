@@ -8,14 +8,8 @@
     <link rel="stylesheet" href="{% static 'css/segon.css' %}">
     <link rel="stylesheet" href="{% static 'img/codi.jpg' %}">
     <link rel="stylesheet" href="{% static 'img/zidane.jpg' %}">
-  </head>
-  <body>
-        <section id="introduction">
-            <div class="container">
-                <div class="row fill-viewport align-items-center">
-                    <div class="col-12 col-md-6">
-                        <h1 class="text-white">{{hero.title}}</h1>
-                        <p class="lead text-white-70">{{hero.desc}}</p>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
     <style>
         a.buttono {
             text-decoration: none;
@@ -23,7 +17,7 @@
             font-weight: 600;
             font-size: 20px;
             color: #ffffff;
-            background-color: {{hero.color_bot}};
+            background-color: {{hero.color_del_boton}};
             border-radius: 6px;
             border: 2px solid #black;
         }
@@ -32,7 +26,42 @@
             color: #1883ba;
             background-color: #ffffff;
         }
+        
+        a.buttonu {
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: {{modulocodigo.color_del_boton}};
+            border-radius: 6px;
+            border: 2px solid #black;
+        }
+
+        a.buttonu:hover{
+            color: #1883ba;
+            background-color: #ffffff;
+        }
+        
+    
+    #introduction {
+        background: linear-gradient(rgba(220,0,0 ,1), rgba(0,0,0,0.2)), url('{{ MEDIA_URL }}{{hero.imagen}}') 0% 0%/cover
+        }
+    #info-3 {
+  background: linear-gradient(rgba(237,236,221,1), rgba(0,0,0,0.2)), url('{{ MEDIA_URL }}{{modulonoticia.imagen}}') 0% 0%/cover
+        }
     </style>
+     
+    
+  </head>
+  <body>
+        <section id="introduction">
+            <div class="container">
+                <div class="row fill-viewport align-items-center">
+                    <div class="col-12 col-md-6">
+                        <h1 class="text-white">{{hero.titulo}}</h1>
+                        <p class="lead text-white-70">{{hero.descripcion}}</p>
+    
                         <a class="buttono" href={{hero.URL}} role="button">{{hero.boton}}</a>
 
                     </div>
@@ -43,18 +72,18 @@
           <div class="container">
             <div class="row pt-5 align-items-center">
                <div class="col d-none d-md-block align-self-end">
-                 <img src="{{moduloimagen.img}}" class="img-fluid"/>
+                 <img src="{{MEDIA_URL}}{{moduloimagen.imagen}}" class="w3-border w3-margin-bottom w3-margin-right"/>
                </div>
                <div class="col">
                    <h6 class="text-uppercase text-black-40">
-                    {{moduloimagen.subtitle}}
+                    {{moduloimagen.subtitulo}}
                    </h6>
-                   <h2>{{moduloimagen.title}}</h2>
-                <p>{{moduloimagen.desc}}
+                   <h2>{{moduloimagen.titulo}}</h2>
+                <p>{{moduloimagen.descripcion}}
             </p>
             <div class="row">
                 <div class="d-none d-md-block col">
-                        <a href="{{moduloimagen.link}}" class="d-block">Leer.</a>
+                        <a href="{{moduloimagen.URL}}" class="d-block">{{moduloimagen.nombre_del_URL}}</a>
                     </div>
                </div>
              </div>
@@ -64,10 +93,10 @@
            <div class="container">
              <div class="row align-items-center fill-80-viewport">
                <div class="col-12 col-md-6 my-5 order-2 order-md-1">
-                 <p class="text-uppercase text-white-40"><strong>{{pagina3.title}}</strong></p>
-                 <h2 class="text-white">{{pagina3.subtitle}}</h2>
-                 <p class="lead text-white-70">{{pagina3.desc}}</p>
-                 <a class="btn btn-light d-block d-md-inline-block py-3" href="#" role="button">{{pagina3.boton}}</a>
+                 <p class="text-uppercase text-white-40"><strong>{{modulocodigo.titulo}}</strong></p>
+                 <h2 class="text-white">{{modulocodigo.subtitulo}}</h2>
+                 <p class="lead text-white-70">{{modulocodigo.descripcion}}</p>
+                 <a class="buttonu" href={{modulocodigo.URL}} role="button">{{modulocodigo.boton}}</a>
                </div>
                <pre class="col-12 col-md-6 my-5 order-1 order-md-2 py-4 border border-info rounded text-info">
                 <span>1</span> <span> //codingSteroids.js</span>
@@ -96,10 +125,10 @@
             <div class="row fill-80-viewport align-items-center justify-content-end text-white">
               <div class="col-12 basis-md-50">
                 <h6 class="text-white-40">
-                  {{pagina4.title}}
+                  {{modulonoticia.subtitulo}}
                 </h6>
-                <h3>{{pagina4.subtitle}}</h3>
-                <p class="text-uppercase text-white-70">{{pagina4.company}}</p>
+                <h3>{{modulonoticia.titulo}}</h3>
+                <p class="text-uppercase text-white-70">{{modulonoticia.company}}</p>
               </div>
           </div>
           </div>

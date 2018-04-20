@@ -1,68 +1,79 @@
 from __future__ import unicode_literals
 from django.contrib import admin
-from .models import Hero, ModuloImagen, Pagina3, Pagina4, Pagina5, Pagina6
+from .models import Hero, ModuloImagen, ModuloCodigo, ModuloNoticia, ModuloProductos, Pagina, ModuloItem
 
 
 class HeroAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titulo',          {'fields': ['title']}),
-        ('Descripcion',     {'fields': ['desc']}),
-        ('Boton',           {'fields': ['boton']}),
-        ('Color del Boton', {'fields': ['color_bot']}),
-        ('URL',             {'fields': ['URL']}),
-        ('Imagen',          {'fields': ['img']}),
+        ('',             {'fields': ['titulo']}),
+        ('',             {'fields': ['descripcion']}),
+        ('',             {'fields': ['boton']}),
+        ('',             {'fields': ['color_del_boton']}),
+        ('',             {'fields': ['URL']}),
+        ('',             {'fields': ['imagen']}),
+
 ]
 
 
 class ModuloImagenAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titulo',                  {'fields': ['title']}),
-        ('Subtitulo',               {'fields': ['subtitle']}),
-        ('Descripcion',             {'fields': ['desc']}),
-        ('URL',                     {'fields': ['link']}),
-        ('Imagen',                  {'fields': ['img']}),
+        ('',             {'fields': ['titulo']}),
+        ('',             {'fields': ['subtitulo']}),
+        ('',             {'fields': ['descripcion']}),
+        ('',             {'fields': ['URL']}),
+        ('',             {'fields': ['imagen']}),
+        ('',             {'fields': ['nombre_del_URL']}),
 ]
 
 
-class QuestionAdmin3(admin.ModelAdmin):
+class ModuloCodigoAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titulo',      {'fields': ['title']}),
-        ('Subtitulo',   {'fields': ['subtitle']}),
-        ('Descripcion', {'fields': ['desc']}),
-        ('Boton',       {'fields': ['boton']}),
+        ('',            {'fields': ['titulo']}),
+        ('',            {'fields': ['subtitulo']}),
+        ('',            {'fields': ['descripcion']}),
+        ('',            {'fields': ['URL']}),
+        ('',            {'fields': ['boton']}),
+        ('',            {'fields': ['color_del_boton']}),
+        ('',            {'fields': ['codigo']}),
 ]
 
 
-class QuestionAdmin4(admin.ModelAdmin):
+class ModuloNoticiaAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titulo',          {'fields': ['title']}),
-        ('Subtitulo',       {'fields': ['subtitle']}),
-        ('Company',         {'fields': ['company']}),
+        ('',             {'fields': ['titulo']}),
+        ('',             {'fields': ['subtitulo']}),
+        ('',             {'fields': ['company']}),
+        ('',             {'fields': ['imagen']}),
 ]
 
 
-class QuestionAdmin5(admin.ModelAdmin):
+class ModuloProductosAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titulo',          {'fields': ['title']}),
-        ('Subtitulo',       {'fields': ['subtitle']}),
-        ('Link/Enlace',     {'fields': ['link']}),
-        ('Descripcion',     {'fields': ['desc']}),
-        ('Descripcion1',     {'fields': ['desc']}),
-        ('Descripcion2',     {'fields': ['desc']}),
+        ('',       {'fields': ['titulo']}),
+        ('',       {'fields': ['subtitulo']}),
+    ]
+
+class ModuloItemAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('',     {'fields': ['imagen']}),
+        ('',     {'fields': ['nombre_del_URL']}),
+        ('',     {'fields': ['URL']}),
+        ('',     {'fields': ['descripcion']}),
+
 ]
 
-
-class QuestionAdmin6(admin.ModelAdmin):
+class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Titulo',          {'fields': ['title']}),
-        ('Subtitulo',       {'fields': ['subtitle']}),
-        ('Descripcion',     {'fields': ['desc']}),
+        ('Titulo',          {'fields': ['titulo']}),
+        ('Subtitulo',       {'fields': ['subtitulo']}),
+        ('Descripcion',     {'fields': ['descripcion']}),
         ('Boton',           {'fields': ['boton']}),
 ]
 
 admin.site.register(Hero, HeroAdmin)
 admin.site.register(ModuloImagen, ModuloImagenAdmin)
-admin.site.register(Pagina3, QuestionAdmin3)
-admin.site.register(Pagina4, QuestionAdmin4)
-admin.site.register(Pagina5, QuestionAdmin5)
-admin.site.register(Pagina6, QuestionAdmin6)
+admin.site.register(ModuloCodigo, ModuloCodigoAdmin)
+admin.site.register(ModuloNoticia, ModuloNoticiaAdmin)
+admin.site.register(ModuloProductos, ModuloProductosAdmin)
+admin.site.register(Pagina, QuestionAdmin)
+admin.site.register(ModuloItem, ModuloItemAdmin)

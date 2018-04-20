@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
-from .models import Hero, ModuloImagen, Pagina3, Pagina4, Pagina5, Pagina6
+from .models import Hero, ModuloImagen, ModuloCodigo, ModuloNoticia, ModuloProductos, Pagina, ModuloItem
 
 def index(request):
     hero = Hero.objects.first()
     moduloimagen = ModuloImagen.objects.first()
-    pagina3 = Pagina3.objects.first()
-    pagina4 = Pagina4.objects.first()
-    pagina5 = Pagina5.objects.first()
-    pagina6 = Pagina6.objects.first()
+    modulocodigo = ModuloCodigo.objects.first()
+    modulonoticia = ModuloNoticia.objects.first()
+    moduloproductos = ModuloProductos.objects.first()
+    moduloitem = ModuloItem.objects.first()
+    pagina = Pagina.objects.first()
+
     return render(request, 'inde/index.html', {
         'hero': hero,
         'moduloimagen': moduloimagen,
-        'pagina3': pagina3,
-        'pagina4': pagina4,
-        'pagina5': pagina5,
-        'pagina6': pagina6,})
+        'modulocodigo': modulocodigo,
+        'modulonoticia': modulonoticia,
+        'moduloproductos': moduloproductos,
+        'pagina': pagina,
+        'moduloitem': moduloitem,
+        })
 
 def pagina(request):
     return render(request, 'polls/pagina.html', {})
+
+    
+    
