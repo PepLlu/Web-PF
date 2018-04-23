@@ -59,6 +59,9 @@
         background-color: #ffffff;
     }
     
+    #flex {
+      justify-content: center;
+    }
     
     #introduction {
         background: linear-gradient(rgba(220,0,0 ,1), rgba(0,0,0,0.2)), url('{{ MEDIA_URL }}{{hero.imagen}}') 0% 0%/cover
@@ -225,49 +228,18 @@
             </div>
         </section>
         {% endfor %}
-        <section id="footer" class="bg-dark">
-          <div class="container">
-            <div class="row fill-40-viewport py-5 text-white-70 align-items-center">
-                <div class="col-12 col-md-6">
-                  <ul class="list-unstyled">
-                    <li><h6 class="text-white">ABOUT</h6></li>
-                    <li>We’ve been working on Coding on Steroids
-                      for the all our lives.
-                      A groundbreaking tech deserves such dedication, huh?
-                      If you’d like to learn more, or are interested in a job,
-                      contact us anytime at
-                      <a class="text-white" href="https://twitter.com/OhansEmmanuel" target="_blank">@ohansemmanuel</a></li>
-                  </ul>
-                </div>
-                <div class="col-12 col-md-2">
-                  <ul class="list-unstyled">
-                    <li><h6 class="text-white">PRODUCT</h6></li>
-                    <li>Features</li>
-                    <li>Examples</li>
-                    <li>Tour</li>
-                    <li>Gallery</li>
-                  </ul>
-                </div>
-                <div class="col-12 col-md-2">
-                  <ul class="list-unstyled">
-                    <li><h6 class="text-white">APIS</h6></li>
-                    <li>Rich data</li>
-                    <li>Simple</li>
-                    <li>Real time</li>
-                    <li>Social</li>
-                  </ul>
-                </div>
-                <div class="col-12 col-md-2">
-                <ul class="list-unstyled">
-                  <li><h6 class="text-white">LEGAL</h6></li>
-                  <li>Terms</li>
-                  <li>Legal</li>
-                  <li>Privacy</li>
-                  <li>License</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-  </body>
+<section id="footer" class="bg-dark">
+  <div class="container">
+    <div class="row fill-40-viewport py-5 text-white-70 align-items-center">
+        <div class="col-12 col-md-6">
+          <ul id="flex" class="list-unstyled">
+            <li><h6 class="text-white">{{modulopie.titulo}}</h6></li>
+            <li>{{modulopie.descripcion}}
+              <a class="text-white" href="{{modulopie.URL}}" target="_blank">{{modulopie.nombre_del_URL}}</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
 </html>
