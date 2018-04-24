@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'img/codi.jpg' %}">
     <link rel="stylesheet" href="{% static 'img/zidane.jpg' %}">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
   </head>  
   <style>
     
@@ -60,8 +63,8 @@
       background-color: #ffffff;
     }
     
-    div.contenido {
-      justify-content: space-around;
+    div.contenido { 
+      justify-content: start;
     }
     
     #Hero {
@@ -79,7 +82,7 @@
             <div class="row fill-viewport align-items-center">
                 <div class="col-12 col-md-6">
                     <h1 class="text-white">{{hero.titulo}}</h1>
-                    <p class="lead text-white-70">{{hero.descripcion}}</p>
+                    <p class="lead text-white-70">{{hero.descripcion|safe}}</p>
                     <a class="buttono" href={{hero.URL}} role="button">{{hero.boton}}</a>
                 </div>
             </div>
@@ -184,7 +187,9 @@
                 <div class="row mb-5">
                   <div class="col-12 col-md-4 mx-auto mt-5 text-center">
                     <img src="{{ MEDIA_URL }}{{moduloitem.imagen}}" width="75px" class="mt-4"/>
-                    <p><strong class="text-info">{{moduloitem.nombre_del_URL}}</strong>   {{moduloitem.descripcion}}</p>
+                    <p>
+                      <a href={{moduloitem.URL}}><strong class="text-info">{{moduloitem.nombre_del_URL}}</strong></a> {{moduloitem.descripcion}}
+                    </p>
                   </div>
                 </div>
               </div>

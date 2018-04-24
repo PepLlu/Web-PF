@@ -7,6 +7,7 @@ from . import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('polls.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] 
 
 if settings.DEBUG: 

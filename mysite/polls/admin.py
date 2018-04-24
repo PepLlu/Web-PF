@@ -43,7 +43,7 @@ class ModuloCodigoAdmin(admin.ModelAdmin):
         ('',            {'fields': ['descripcion']}),
         ('',            {'fields': ['URL']}),
         ('',            {'fields': ['boton']}),
-        ('',            {'fields': ['color_del_boton']}),
+        ('',            {'fields': ['color_del_boton']})
 ]
 
 

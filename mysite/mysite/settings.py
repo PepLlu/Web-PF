@@ -19,6 +19,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
+    'ckeditor_uploader',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -114,3 +116,55 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
+
+CKEDITOR_CONFIGS = {
+
+    'awesome_ckeditor': {
+        'toolbar': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline',
+             '-', 'Link', 'Unlink', 'Anchor',
+             '-', 'Format',
+             '-', 'SpellChecker', 'Scayt',
+             '-', 'Maximize',
+             '-', 'Language',
+            ],
+        ],
+        'height': '100%',
+        'width': '100%',
+        'toolbarCanCollapse': False,
+    },
+    'full': {
+        'toolbar': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline', 'NumberedList', 'BulletedList',
+             '-', 'Outdent', 'Indent', 'Blockquote', 'CreateDiv',
+             '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+             '-', 'TextColor', 'BGColor',
+             '-', 'Maximize', 'ShowBlocks',  'Image' ,
+             '-', 'Cut', 'Copy', 'Paste', 'PasteText',
+            ],
+            ['-', 'SpecialChar',
+             '-', 'Source',
+            ],
+            [
+                '-', 'Styles', 'Format', 'Font', 'FontSize'
+            ],
+            [
+                '-', 'BidiLtr', 'BidiRtl'
+            ]
+        ],
+        'width': '100%',
+        'height': '300px',
+        'toolbarCanCollapse': False,
+    },
+    'disable': {
+        'toolbar': [],
+        'width': '100%',
+        'height': '600px',
+        'toolbarCanCollapse': False,
+    },
+}

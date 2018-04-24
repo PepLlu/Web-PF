@@ -2,13 +2,15 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib import admin
+from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.fields import RichTextField
 
 class Hero(models.Model):
     titulo = models.CharField(max_length=100,
     verbose_name = 'Titulo de la Noticia', 
     help_text = 'Introduzca el titulo de la Noticia.'
     )
-    descripcion = models.TextField(max_length=1000,
+    descripcion = RichTextUploadingField(config_name='full', max_length=1000,
     verbose_name = 'Descripción de la Noticia', 
     help_text = 'Introduzca una descripción, máximo 1000 carácteres.'
     )
@@ -52,7 +54,7 @@ class ModuloImagen(models.Model):
     verbose_name = 'Subtitulo de la Noticia', 
     help_text = 'Introduzca el subtitulo de la Noticia.'
     )
-    descripcion = models.TextField(max_length=1000,
+    descripcion = RichTextUploadingField(config_name='full', max_length=1000,
     verbose_name = 'Descripción de la Noticia', 
     help_text = 'Introduzca una descripción, máximo 1000 carácteres.'
     )
@@ -93,7 +95,7 @@ class ModuloCodigo(models.Model):
     verbose_name = 'Subtitulo de la Noticia', 
     help_text = 'Introduzca el subtitulo de la Noticia.'
     )
-    descripcion = models.TextField(max_length=1000,
+    descripcion = RichTextUploadingField(config_name='full', max_length=1000,
     verbose_name = 'Descripción de la Noticia', 
     help_text = 'Introduzca una descripción, máximo 1000 carácteres.'
     )
@@ -192,7 +194,7 @@ class ModuloItem(models.Model):
     verbose_name = 'Texto de la URL', 
     help_text = 'Introduzca el texto que quieras para que apareza enlazado.'
     )
-    descripcion = models.TextField(max_length=50,
+    descripcion = RichTextUploadingField(config_name='full', max_length=50,
     verbose_name = 'Descripción del producto', 
     help_text = 'Introduzca una descripción, máximo 50 carácteres.'
     )
@@ -246,15 +248,15 @@ class ModuloItem2(models.Model):
     verbose_name = 'Imagén que prefieras.', 
     help_text = 'Introduzca una imagén.'
     )
-    descripcion = models.TextField(max_length=40,
+    descripcion = RichTextUploadingField(config_name='full', max_length=40,
     verbose_name = 'Descripción 1 del producto', 
     help_text = 'Introduzca una descripción, máximo 40 carácteres.'
     )
-    descripcion1 = models.TextField(max_length=40,
+    descripcion1 = RichTextUploadingField(config_name='full', max_length=40,
     verbose_name = 'Descripción 2 del producto', 
     help_text = 'Introduzca una descripción, máximo 40 carácteres.'
     )
-    descripcion2 = models.TextField(max_length=40,
+    descripcion2 = RichTextUploadingField(config_name='full', max_length=40,
     verbose_name = 'Descripción 3 del producto', 
     help_text = 'Introduzca una descripción, máximo 40 carácteres.'
     )
@@ -291,7 +293,7 @@ class ModuloPie(models.Model):
     verbose_name = 'Titulo del Pie de Página', 
     help_text = 'Introduzca el titulo del Pie de Página.'
     )
-    descripcion = models.TextField(max_length=1500,
+    descripcion = RichTextUploadingField(config_name='full', max_length=1500,
     verbose_name = 'Descripción del Pie de Página', 
     help_text = 'Introduzca una descripción, máximo 1500 carácteres.'
     )
