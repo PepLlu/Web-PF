@@ -108,7 +108,7 @@ class ModuloPreciosAdmin(admin.ModelAdmin):
     class Meta:
         model = ModuloPrecios
     fieldsets = [
-        ('',             {'fields': ['titulopost']}),
+        ('',       {'fields': ['titulopost']}),
         ('',       {'fields': ['titulo']}),
         ('',       {'fields': ['subtitulo']}),
     ]
@@ -135,5 +135,6 @@ admin.site.register(ModuloNoticia, ModuloNoticiaAdmin)
 admin.site.register(ModuloProductos, ModuloProductosAdmin)
 admin.site.register(ModuloPrecios, ModuloPreciosAdmin)
 admin.site.register(ModuloItem)
+admin.site.register(ModuloItem2)
 admin.site.register(ModuloPie, ModuloPieAdmin)
-admin.site.register(Lesson, LessonAdmin)
+

@@ -16,7 +16,7 @@ class Hero(models.Model):
     titulopost = models.CharField(max_length=250)
     class Meta:
         verbose_name = ('Hero')
-        verbose_name_plural = ('Heroes')
+        verbose_name_plural = ('Hero cabezera')
 
     def __unicode__(self):
         return self.titulopost
@@ -72,7 +72,7 @@ class ModuloNoticia(models.Model):
     titulopost = models.CharField(max_length=250)
     class Meta:
         verbose_name = ('Noticia')
-        verbose_name_plural = ('Noticias')
+        verbose_name_plural = ('Noticias de la página')
 
     def __unicode__(self):
         return self.titulopost
@@ -104,8 +104,8 @@ class ModuloItem(models.Model):
     estado = models.CharField(null=True, blank=True, max_length=10)
     titulopost = models.CharField(max_length=250)
     class Meta:
-        verbose_name = ('Item')
-        verbose_name_plural = ('Items')
+        verbose_name = ('Item de Producto')
+        verbose_name_plural = ('Items de Productos')
 
     def __unicode__(self):
         return self.titulopost
@@ -118,10 +118,13 @@ class ModuloPrecios(models.Model):
     creado = models.DateTimeField(null=True, blank=True, auto_now_add=True)        
     actualizado = models.DateTimeField(null=True, blank=True, auto_now=True)
     estado = models.CharField(null=True, blank=True, max_length=10)
-    titulopost = models.CharField(max_length=250)
+    titulopost = models.CharField(max_length=250, 
+    verbose_name = 'Titulo Post', 
+    help_text = 'Introduzca el titulo del Post'
+    )
     class Meta:
-        verbose_name = ('Preu')
-        verbose_name_plural = ('Preus')
+        verbose_name = ('Precio')
+        verbose_name_plural = ('Precios')
 
     def __unicode__(self):
         return self.titulopost
@@ -142,8 +145,8 @@ class ModuloItem2(models.Model):
     estado = models.CharField(null=True, blank=True, max_length=10)    
     titulopost = models.CharField(max_length=250)
     class Meta:
-        verbose_name = ('Item2')
-        verbose_name_plural = ('Items2')
+        verbose_name = ('Item de Precio')
+        verbose_name_plural = ('Items de Precios')
 
     def __unicode__(self):
         return self.titulopost
@@ -160,7 +163,7 @@ class ModuloPie(models.Model):
     titulopost = models.CharField(max_length=250)
     class Meta:
         verbose_name = ('Pie')
-        verbose_name_plural = ('Pies')
+        verbose_name_plural = ('Pie de la página')
 
     def __unicode__(self):
         return self.titulopost
