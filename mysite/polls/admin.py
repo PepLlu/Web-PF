@@ -37,14 +37,13 @@ class ModuloCodigoAdmin(admin.ModelAdmin):
     search_fields = ('titulopost', 'descripcion')
     list_filter = ('creado', 'actualizado', 'estado')
     fieldsets = [
-        ('',             {'fields': ['titulopost']}),
+        ('',             {'fields':['titulopost']}),
         ('',            {'fields': ['titulo']}),
         ('',            {'fields': ['subtitulo']}),
         ('',            {'fields': ['descripcion']}),
         ('',            {'fields': ['URL']}),
         ('',            {'fields': ['boton']}),
         ('',            {'fields': ['color_del_boton']}),
-        ('',            {'fields': ['codigo']}),
 ]
 
 
